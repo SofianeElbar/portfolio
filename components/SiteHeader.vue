@@ -10,16 +10,16 @@ import {
 } from "@headlessui/vue";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 
-const route = { name: "index" };
+const route = useRoute();
 
 const navigation = [
   { name: "Accueil", href: "/", current: route.name == "index" },
-  { name: "Github", href: "/github", current: route.name == "github" },
   {
     name: "Projets",
     href: "/projets",
     current: route.name.includes("projets"),
   },
+  { name: "Github", href: "/github", current: route.name == "github" },
   { name: "CV", href: "/cv", current: route.name == "cv" },
 ];
 </script>
