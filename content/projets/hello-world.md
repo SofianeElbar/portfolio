@@ -4,7 +4,7 @@ description: This is one of my project post and I'm so excited to share it with 
 date: 2023-05-23
 cover: nasa-Q1p7bh3SHj8-unsplash.jpg
 tags:
-  - blog
+  - projet
 ---
 
 # Hello, World 👋🏻
