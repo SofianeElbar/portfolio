@@ -9,15 +9,15 @@ const props = defineProps(["posts"]);
     class="bg-white rounded-lg shadow-md overflow-hidden hover:opacity-75"
   >
     <NuxtLink :to="post._path">
-      <img
-        :src="`/images/projets/${post.cover}`"
+      <div
+        :style="'background-image: url(/images/projets/' + post.cover + ');'"
         alt="Blog Post Cover Image"
-        class="w-full h-48 object-cover"
-      />
+        class="post-cover w-full h-48 animate-anim-image"
+      ></div>
     </NuxtLink>
-    <div class="p-6">
-      <h2 class="text-xl font-bold mb-2">{{ post.title }}</h2>
-      <p class="text-gray-700 mb-4">{{ post.description }}</p>
+    <div class="screen-content p-6">
+      <h2 class="title text-xl font-bold mb-2">{{ post.title }}</h2>
+      <p class="name text-gray-700 mb-4">{{ post.description }}</p>
       <NuxtLink
         :to="post._path"
         class="inline-block bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded float-right mb-8"
