@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps(["posts"]);
+const props = defineProps({ posts: Array, class: String });
 
 function blur(element, transitionFactor) {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -45,6 +45,7 @@ onMounted(() => {
   <div
     v-for="post in props.posts"
     :key="post.slug"
+    :class="props.class"
     class="card bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105"
   >
     <NuxtLink :to="post._path">

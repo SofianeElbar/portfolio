@@ -37,6 +37,8 @@ let direction = ref("down");
 let section1 = ref(null);
 let section2 = ref(null);
 let section3 = ref(null);
+let projects = ref(null);
+let githubs = ref(null);
 
 // Fonction pour faire défiler les sections
 const scrollSection = () => {
@@ -64,6 +66,7 @@ onMounted(() => {
   scrollButton.addEventListener("click", scrollSection);
 
   let observer;
+
   if (typeof window !== "undefined") {
     observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -79,6 +82,8 @@ onMounted(() => {
     observer.observe(section1.value);
     observer.observe(section2.value);
     observer.observe(section3.value);
+    observer.observe(projects.value);
+    observer.observe(githubs.value);
   }
 });
 </script>
@@ -87,7 +92,7 @@ onMounted(() => {
   <section
     id="section1"
     ref="section1"
-    class="min-h-screen flex flex-col md:flex-row items-center test"
+    class="hide min-h-screen flex flex-col md:flex-row items-center"
   >
     <div class="md:w-3/4">
       <h1 class="text-5xl font-bold">Welcome to my dev world</h1>
@@ -114,10 +119,10 @@ onMounted(() => {
   <section
     id="section2"
     ref="section2"
-    class="min-h-screen flex flex-col justify-center test"
+    class="min-h-screen flex flex-col justify-center"
   >
     <h2 class="text-3xl font-bold mt-8">Mes derniers projets</h2>
-    <div class="grid md:grid-cols-3 pt-8 mb-10 gap-10">
+    <div ref="projects" class="hide grid md:grid-cols-3 pt-8 mb-10 gap-10">
       <Post :posts="posts" />
     </div>
   </section>
@@ -125,10 +130,10 @@ onMounted(() => {
   <section
     id="section3"
     ref="section3"
-    class="min-h-screen flex flex-col justify-center test"
+    class="min-h-screen flex flex-col justify-center"
   >
     <h2 class="text-3xl font-bold mt-8">Mes derniers Repo Github</h2>
-    <div class="grid md:grid-cols-3 pt-8 mb-10 gap-10">
+    <div ref="githubs" class="hide grid md:grid-cols-3 pt-8 mb-10 gap-10">
       <Repo :repos="repos" />
     </div>
   </section>
@@ -145,27 +150,15 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.test {
+.hide {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
-  transition: all 2s;
+  transition: all 1s;
 }
 .show {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
-}
-
-.test:nth-child(2) {
-  transition-delay: 400ms;
-}
-
-.test:nth-child(3) {
-  transition-delay: 600ms;
-}
-
-.test:nth-child(4) {
-  transition-delay: 800ms;
 }
 </style>
