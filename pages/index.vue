@@ -92,15 +92,15 @@ onMounted(() => {
   <section
     id="section1"
     ref="section1"
-    class="hide min-h-screen flex flex-col md:flex-row items-center"
+    class="hide min-h-screen flex flex-col md:flex-row items-center justify-center"
   >
-    <div class="md:w-3/4">
+    <div class="md:w-2/4">
       <h1 class="text-5xl font-bold">Welcome to my dev world</h1>
       <p class="text-base text-gray-900 mt-3 italic">
         Sofiane EL BAR, développeur web et web mobile
       </p>
       <h2 class="text-3xl font-bold mt-8">Qui suis-je ?</h2>
-      <p class="text-lg py-2">
+      <p class="text-lg text-justify py-2">
         Développeur web full stack junior passionné et curieux d'apprendre, je
         suis à la recherche de nouvelles aventures dans le monde du
         développement. Mon enthousiasme pour la collaboration et mon désir de
@@ -109,11 +109,15 @@ onMounted(() => {
         ensemble? 💻🚀
       </p>
     </div>
-    <img
-      src="~/assets/images/sof.jpg"
-      alt="portrait sofiane"
-      class="w-1/2 md:max-w-sm p-8 mx-auto"
-    />
+    <video
+      src="~/assets/videos/sof.mp4"
+      autoplay
+      loop
+      muted
+      class="w-1/4 md:max-w-sm m-28 my-auto rounded-lg shadow-xl"
+    >
+      Désolé, votre navigateur ne prend pas en charge les vidéos intégrées.
+    </video>
   </section>
 
   <section
@@ -152,7 +156,7 @@ onMounted(() => {
 <style scoped>
 .hide {
   opacity: 0;
-  filter: blur(5px);
+  filter: blur(10px);
   transform: translateX(-100%);
   transition: all 1s;
 }
