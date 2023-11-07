@@ -1,4 +1,6 @@
 <script setup>
+const form = ref(null);
+
 const { data: posts } = await useAsyncData("latest-posts", () =>
   queryContent("/projets").sort({ data: 1 }).limit(3).find()
 );
@@ -33,12 +35,10 @@ const { data: repos } = await useAsyncQuery(query);
 let nextSectionId = ref("section1");
 let direction = ref("down");
 
-// ref pour chaque section pour l'animation des blocs
+// ref pour l'animation des blocs
 let section1 = ref(null);
-let section2 = ref(null);
-let section3 = ref(null);
-let projects = ref(null);
 let githubs = ref(null);
+let contact = ref(null);
 
 // Fonction pour faire défiler les sections
 const scrollSection = () => {
@@ -48,20 +48,28 @@ const scrollSection = () => {
   } else if (nextSectionId.value === "section2") {
     if (direction.value === "down") {
       nextSectionId.value = "section3";
-      direction.value = "up";
+      direction.value = "down";
     } else {
       nextSectionId.value = "section1";
       direction.value = "down";
     }
   } else if (nextSectionId.value === "section3") {
+    if (direction.value === "down") {
+      nextSectionId.value = "section4";
+      direction.value = "up";
+    } else {
+      nextSectionId.value = "section2";
+      direction.value = "up";
+    }
+  } else if (nextSectionId.value === "section4") {
     direction.value = "up";
-    nextSectionId.value = "section2";
+    nextSectionId.value = "section3";
   }
   const sectionElement = document.getElementById(nextSectionId.value);
   sectionElement.scrollIntoView({ behavior: "smooth" });
 };
 
-onMounted(() => {
+onMounted(async () => {
   const scrollButton = document.getElementById("scrollButton");
   scrollButton.addEventListener("click", scrollSection);
 
@@ -80,10 +88,12 @@ onMounted(() => {
     });
     // Observer les sections avec l'IntersectionObserver
     observer.observe(section1.value);
-    observer.observe(section2.value);
-    observer.observe(section3.value);
-    observer.observe(projects.value);
     observer.observe(githubs.value);
+    observer.observe(contact.value);
+
+    document.querySelectorAll(".project").forEach((item) => {
+      observer.observe(item);
+    });
   }
 });
 </script>
@@ -114,31 +124,35 @@ onMounted(() => {
       autoplay
       loop
       muted
-      class="w-1/4 md:max-w-sm m-28 my-auto rounded-lg shadow-xl"
+      class="w-2/4 md:max-w-sm m-28 my-auto rounded-lg shadow-xl"
     >
       Désolé, votre navigateur ne prend pas en charge les vidéos intégrées.
     </video>
   </section>
 
-  <section
-    id="section2"
-    ref="section2"
-    class="min-h-screen flex flex-col justify-center"
-  >
+  <section id="section2" class="min-h-screen flex flex-col justify-center">
     <h2 class="text-3xl font-bold mt-8">Mes derniers projets</h2>
-    <div ref="projects" class="hide grid md:grid-cols-3 pt-8 mb-10 gap-10">
-      <Post :posts="posts" />
+    <div class="grid md:grid-cols-3 pt-8 mb-10 gap-10">
+      <Post class="project hide" :posts="posts" />
+    </div>
+  </section>
+
+  <section id="section3" class="min-h-screen flex flex-col justify-center">
+    <h2 class="text-3xl font-bold mt-8">Mes derniers Repo Github</h2>
+    <div ref="githubs" class="hide grid md:grid-cols-3 pt-8 mb-10 gap-10">
+      <Repo :repos="repos" />
     </div>
   </section>
 
   <section
-    id="section3"
-    ref="section3"
-    class="min-h-screen flex flex-col justify-center"
+    id="section4"
+    ref="contact"
+    class="hide flex flex-col min-h-screen justify-center"
   >
-    <h2 class="text-3xl font-bold mt-8">Mes derniers Repo Github</h2>
-    <div ref="githubs" class="hide grid md:grid-cols-3 pt-8 mb-10 gap-10">
-      <Repo :repos="repos" />
+    <div class="mx-auto w-full">
+      <h1 class="text-4xl font-medium">Restons en contact</h1>
+      <p class="mt-3">N'hésitez pas à m'envoyer un mail au besoin</p>
+      <Contact :form="form" />
     </div>
   </section>
 
@@ -153,16 +167,23 @@ onMounted(() => {
   </button>
 </template>
 
-<style scoped>
+<style>
 .hide {
   opacity: 0;
   filter: blur(10px);
   transform: translateX(-100%);
-  transition: all 1s;
+  transition: 1s;
 }
 .show {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
+}
+
+.project:nth-child(2) {
+  transition-delay: 150ms;
+}
+.project:nth-child(3) {
+  transition-delay: 200ms;
 }
 </style>

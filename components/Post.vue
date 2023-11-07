@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({ posts: Array, class: String });
+const props = defineProps({ posts: Array, class: String, post: Object });
 
 function blur(element, transitionFactor) {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -75,13 +75,13 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .title {
   font-family: "Space Mono", monospace;
 }
 
 .card:hover .image {
-  animation: pan-image 22s linear infinite;
+  animation: pan-image 15s linear infinite;
 }
 
 @keyframes pan-image {
