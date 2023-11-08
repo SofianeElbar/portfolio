@@ -2,8 +2,15 @@
 const form = ref(null);
 
 const { data: posts } = await useAsyncData("latest-posts", () =>
-  queryContent("/projets").sort({ data: 1 }).limit(3).find()
+  queryContent("/projets").limit(3).find()
 );
+
+const sortedPosts = posts.value.sort((a, b) => {
+  const dateA = new Date(a.date);
+  const dateB = new Date(b.date);
+
+  return dateB - dateA;
+});
 
 const query = gql`
   {

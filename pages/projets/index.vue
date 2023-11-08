@@ -2,6 +2,13 @@
 const { data: posts } = await useAsyncData("posts", () =>
   queryContent("/projets").find()
 );
+
+const sortedPosts = posts.value.sort((a, b) => {
+  const dateA = new Date(a.date);
+  const dateB = new Date(b.date);
+
+  return dateB - dateA;
+});
 </script>
 
 <template>

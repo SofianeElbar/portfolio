@@ -53,7 +53,7 @@ onMounted(() => {
         :style="
           'background-image: url(/images/projets/' +
           post.cover +
-          '); background-size :cover; background-position: center'
+          '); background-size :cover'
         "
         alt="Blog Post Cover Image"
         class="image w-full h-48"
@@ -91,7 +91,7 @@ onMounted(() => {
   }
 
   20% {
-    background-position: 30% 35%;
+    background-position: 100% 0%;
     background-size: 200%;
   }
 
@@ -102,7 +102,7 @@ onMounted(() => {
   }
 
   40% {
-    background-position: 49% 81%;
+    background-position: 49% 100%;
     background-size: 100%;
   }
 
