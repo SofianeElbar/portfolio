@@ -10,13 +10,13 @@ tags:
 
 ## Présentation du projet 📜
 
-<font color="black">Ce projet a nécéssité la création d'un back-end pour stocker les données nouvellement créées, en l'occurence le nom, commentaire de l'abonné et sa date de création. Nous avons décidé conjointement avec mon collègue et notre lead developpeur d'opter pour l'implémentaion d'un micro-service hérité de Laraval : Lumen.
+<font color="black">Ce projet a nécessité la création d'un back-end pour stocker les données nouvellement créées, en l'occurence le nom, commentaire de l'abonné et sa date de création. Nous avons décidé conjointement avec mon collègue et notre lead developpeur d'opter pour l'implémentaion d'un micro-service hérité de Laraval : Lumen.
 
-Pour le projet front-end, qui est codé en nuxt/vue, nous avons principalement recyclé des composants initialemement présents sur le projet pour insérer les commentaires dans un rail avec un défilement horizental au delà de trois commentaires.
+Pour le projet front-end, qui est codé en nuxt/vue, nous avons principalement recyclé des composants initialemement présents sur le projet pour insérer les commentaires dans un rail avec un défilement horizontal au delà de trois commentaires.
 
 ![Espace commentaire](/images/projets/commentaires.jpg)
 
-De même, nous avons paramétré le Dashboard des modérateurs afin que ces derniers puissent ranger les commentaires émis selon trois catégories d'action: à relire, valider, rejeter.
+De même, nous avons paramétré le Dashboard des modérateurs afin que ces derniers puissent ranger les commentaires émis selon trois catégories d'action : à relire, valider, rejeter.
 
 ![Espace modération](/images/projets/moderation.jpg)
 
@@ -28,13 +28,13 @@ La mise en place du projet étant complexe, j'ai décidé pour plus de clarté d
 
 - **Création des données côté backend**
 
-Paramétrage de le route en post pour la création d'un commentaire
+Paramétrage de la route en post pour la création d'un commentaire
 
 ```php
 $router->post('create', ['uses' => 'CommentController@createComment']);
 ```
 
-Création du controlleur responsable de la gestion des commentaires et des abonnées
+Création du controller responsable de la gestion des commentaires et des abonnés
 
 ```php
 class CommentController extends BaseController
@@ -51,7 +51,7 @@ class CommentController extends BaseController
 }
 ```
 
-Dans ce controlleur, on paramètre la fonction qui permet la récupération des données nécessaires à la création d'un commentaire, notamment l'identification de l'abonné, le contenu de son commentaire et l'identification du film qu'il commente
+Dans ce controller, on paramètre la fonction qui permet la récupération des données nécessaires à la création d'un commentaire, notamment l'identification de l'abonné, le contenu de son commentaire et l'identification du film qu'il commente
 
 ```php
 function createComment(Request $request)
@@ -65,7 +65,7 @@ function createComment(Request $request)
   }
 ```
 
-Après un jeu de vérification, la dernière étape consiste en la création du commentaire en lui même grâce à une requête SQL définie dans la classe commentRepository
+Après un jeu de vérification, la dernière étape consiste en la création du commentaire en lui-même grâce à une requête SQL définie dans la classe commentRepository
 
 ```php
 $result = $this->commentRepository->createComment($content, $id_film,
@@ -110,7 +110,7 @@ Voici la requête SQL permettant la création d'une ligne dans la table commenta
 - **Fetch des data pour un affichage côté font-end**
 
 Afin de faire communiquer le front de Tënk à notre back, nous avons créé un fichier
-typescript dans lequel nous avons déclaré une class CommentService afin d'interagir avec
+typescript dans lequel nous avons déclaré une classe CommentService afin d'interagir avec
 notre base de données via des requêtes html.
 Voici la requête pour le fetch des avis par film :
 
@@ -136,7 +136,7 @@ export class CommentService {
 }
 ```
 
-Comme dit plus haut, nous avons recyclé des composants du framework css Buefy présent nativement dans le projet Tënk. L'un d'eux se nomme list-hooper et c'est celui-ci qui nous a permis de faire défiler les commentaires sur un axe horizental grâce à un caroussel muni de flèches.
+Comme dit plus haut, nous avons recyclé des composants du framework css Buefy présent nativement dans le projet Tënk. L'un d'eux se nomme list-hooper et c'est celui-ci qui nous a permis de faire défiler les commentaires sur un axe horizontal grâce à un caroussel muni de flèches.
 
 ```js
 <!-- THERE ARE COMMENTS -->
@@ -152,7 +152,7 @@ Comme dit plus haut, nous avons recyclé des composants du framework css Buefy p
 ```
 
 Suivant la conditionnelle v-if qu’on a mise en place, le carrousel n'apparaît que s’ il y a des avis qui sont émis.
-On a configuré le composant list-hooper via une props nommé elements, afin que la variable comments, qui est liée à tous les avis propre à un film s’affichent à l’intérieur.
+On a configuré le composant list-hooper via une props nommée elements, afin que la variable comments, qui est liée à tous les avis propres à un film, s’affichent à l’intérieur.
 
 <!-- # Hello, World 👋🏻
 

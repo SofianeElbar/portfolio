@@ -10,7 +10,7 @@ tags:
 
 ## Présentation du projet 📜
 
-<font color="black">Ceci est un projet personnel que j'ai utilisé comme prétexte afin de m'initier à la stack Node.js. L'idée principale est de créer des articles et de les stocker sur une base de données hébergée sur MongoDB Atlas. le projet est encore en développement.
+<font color="black">Ceci est un projet personnel que j'ai utilisé afin de m'initier à la stack Node.js. L'idée principale est de créer des articles et de les stocker sur une base de données hébergée sur MongoDB Atlas. Le projet est encore en développement.
 
 <figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/blog-accueil.jpg" alt="tv-app-search"></img><figcaption><center><font color="black">Accueil du blog</center></figcaption></figure>
 
@@ -18,7 +18,7 @@ tags:
 
 ## Aspects techniques 📐
 
-Pour faciliter la gestion de mon backend, j'ai utilisé le framework Express.js ainsi que l'Object data Modeling (ODM) Mongoose.js afin de "modeler" la structure de mes données. Voici comment j'ai défini l'Object Relational Mapper (ORM) pour la structure des données relatives aux articles qui doivent apparaitre sur le blog.
+Pour faciliter la gestion de mon backend, j'ai utilisé le framework Express.js ainsi que l'Object data Modeling (ODM) Mongoose.js afin de "modeler" la structure de mes données. Voici comment j'ai défini l'Object Relational Mapper (ORM) pour la structure des données relatives aux articles qui doivent apparaître sur le blog.
 
 ```js
 const mongoose = require("mongoose");
@@ -46,7 +46,7 @@ const Project = mongoose.model("Project", projectSchema);
 module.exports = Project;
 ```
 
-J'ai défini par la suite mes routes auxquelles j'ai affecté mon controlleur projectController. voici un exemple avec la route permettant la création d'un nouvel article.
+J'ai défini par la suite mes routes auxquelles j'ai affecté mon controller projectController. Voici un exemple avec la route permettant la création d'un nouvel article.
 
 ```js
 const express = require("express");
@@ -58,7 +58,7 @@ router.post("/", projectController.project_create_post);
 module.exports = router;
 ```
 
-Je configure ensuite la requête dans la logique de mon controlleur pour la création de l'article
+Je configure ensuite la requête dans la logique de mon controller pour la création de l'article.
 
 ```js
 const Project = require("../models/project");

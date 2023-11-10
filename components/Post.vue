@@ -36,7 +36,7 @@ onMounted(() => {
   cards.forEach((card) => {
     const title = card.querySelector(".title");
 
-    card.addEventListener("mouseover", blur(title, 2));
+    card.addEventListener("mouseover", blur(title, 1));
   });
 });
 </script>
