@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   content: {
     highlight: {
       theme: "nord",
-      preload: ["html", "js", "css", "php", "json", "vue", "bash"],
+      preload: ["html", "js", "css", "php", "json", "vue", "bash", "ts"],
     },
   },
   apollo: {

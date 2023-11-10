@@ -38,7 +38,7 @@ const sendEmail = (e) => {
         />
         <label
           class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-black duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500"
-          >Your name</label
+          >Votre nom</label
         >
       </div>
       <div class="relative z-0">
@@ -51,7 +51,7 @@ const sendEmail = (e) => {
         />
         <label
           class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-black duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500"
-          >Your email</label
+          >Votre email</label
         >
       </div>
       <div class="relative z-0 col-span-2">
@@ -64,7 +64,7 @@ const sendEmail = (e) => {
         ></textarea>
         <label
           class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-black duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500"
-          >Your message</label
+          >Votre message</label
         >
       </div>
     </div>

@@ -2,7 +2,7 @@
 const form = ref(null);
 
 const { data: posts } = await useAsyncData("latest-posts", () =>
-  queryContent("/projets").limit(3).find()
+  queryContent("/projets").find()
 );
 
 const sortedPosts = posts.value.sort((a, b) => {
@@ -11,6 +11,8 @@ const sortedPosts = posts.value.sort((a, b) => {
 
   return dateB - dateA;
 });
+
+const firstThreePosts = sortedPosts.slice(0, 3);
 
 const query = gql`
   {
@@ -140,7 +142,7 @@ onMounted(async () => {
   <section id="section2" class="min-h-screen flex flex-col justify-center">
     <h2 class="text-3xl font-bold mt-8">Mes derniers projets</h2>
     <div class="grid md:grid-cols-3 pt-8 mb-10 gap-10">
-      <Post class="project hide" :posts="posts" />
+      <Post class="project hide" :posts="firstThreePosts" />
     </div>
   </section>
 

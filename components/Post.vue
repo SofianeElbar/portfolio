@@ -69,7 +69,7 @@ onMounted(() => {
       <NuxtLink
         :to="post._path"
         class="inline-block bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded float-right mb-8"
-        >Read More
+        >En savoir plus
       </NuxtLink>
     </div>
   </div>

@@ -17,7 +17,7 @@ const sortedPosts = posts.value.sort((a, b) => {
   Voici une liste non exhaustive de mes projets web, qu'ils soient personnels ou
   professionels
 
-  <section class="grid md:grid-cols-3 mt-8 gap-10">
+  <section class="grid md:grid-cols-3 mt-8 mb-8 gap-10">
     <Post :posts="posts" />
   </section>
 </template>

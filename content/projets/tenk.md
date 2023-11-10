@@ -1,6 +1,6 @@
 ---
-title: Tënk!
-description: Implémentation d'une section commentaires pour les abonnés du site de streaming documentaire Tënk!
+title: Plateforme Tënk
+description: Implémentation d'une section commentaires pour le site de Tënk.
 date: 2023-06-05
 cover: header_tenk.jpg
 tags:
@@ -154,6 +154,28 @@ Comme dit plus haut, nous avons recyclé des composants du framework css Buefy p
 Suivant la conditionnelle v-if qu’on a mise en place, le carrousel n'apparaît que s’ il y a des avis qui sont émis.
 On a configuré le composant list-hooper via une props nommé elements, afin que la variable comments, qui est liée à tous les avis propre à un film s’affichent à l’intérieur.
 
+<!-- # Hello, World 👋🏻
+
+This is a paragraph.
+
+This is another paragraph.
+
+![Earth from Space](/images/blog/nasa-Q1p7bh3SHj8-unsplash.jpg)
+
+## This is a heading 2
+
+You can use lists
+
+- list item 1
+- list item 2
+- list item 3
+
+You can use code blocks
+
+```js
+const hello = "world";
+console.log(hello);
+``` -->
 <!-- You can use blockquotes
 
 > This is a blockquote
