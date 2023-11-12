@@ -2,7 +2,7 @@
 title: My-tv-app
 description: Application de recherche de ses séries préférées à partir d'une API.
 date: 2023-04-24
-cover: tvshow.jpg
+cover: tv-app.jpg
 tags:
 ---
 
@@ -14,11 +14,11 @@ tags:
 
 Pour ce projet, j'ai utilisé la bibliothèque React.
 
-<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/tv-app-search.jpg" alt="tv-app-search"></img><figcaption><center><font color="black">Recherche principale</center></figcaption></figure>
+<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/tv-search.jpg" alt="tv-app-search"></img><figcaption><center><font color="black">Recherche principale</center></figcaption></figure>
 
-<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/tv-app-actor.jpg" alt="tv-app-search"></img><figcaption><center><font color="black">Recherche par acteurs</center></figcaption></figure>
+<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/tv-actor.jpg" alt="tv-app-search"></img><figcaption><center><font color="black">Recherche par acteurs</center></figcaption></figure>
 
-<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/tv-app-projects.jpg" alt="tv-app-search"></img><figcaption><center><font color="black">Recherche par projets d'acteurs</center></figcaption></figure>
+<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/tv-projects.jpg" alt="tv-app-search"></img><figcaption><center><font color="black">Recherche par projets d'acteurs</center></figcaption></figure>
 
 Si vous souhaitez jeter un coup d'oeil à l'application <a href="https://my-web-app-64479.web.app/" target="_blank">c'est par ici ;)</a>
 

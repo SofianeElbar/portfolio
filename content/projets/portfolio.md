@@ -2,7 +2,7 @@
 title: Ce portfolio
 description: Porfolio regroupant quelques-uns de mes projets.
 date: 2023-02-05
-cover: portfolio.jpg
+cover: portfo.jpg
 tags:
 ---
 
@@ -12,9 +12,9 @@ tags:
 
 <font color="black">Je voulais concevoir ce portfolio de telle sorte à ce qu'il puisse me permettre de rentrer dans le détail technique des diverses réalisations que j'ai pu prendre en charge. Je me suis tourné vers le framework Nuxt3 de Vue car au delà de sa faculté à générer des pages statiques côté serveur pour gagner en fluidité, ce dernier me permettait grâce à son module Nuxt Content de personnaliser de manière simple le contenu de mes articles en utilisant une logique de rédaction se rapporochant d'un CMS. Cet outil m'a permis notamment de prendre en charge la syntaxe Markdown et d'afficher du code colorisé dans des blocs.
 
-<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/markdown.jpg" alt="markdown syntax"></img><figcaption><center><font color="black">La syntaxe markdown ressemble à celle d'un éditeur de texte</center></figcaption></figure>
+<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/markd.jpg" alt="markdown syntax"></img><figcaption><center><font color="black">La syntaxe markdown ressemble à celle d'un éditeur de texte</center></figcaption></figure>
 
-<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/code-highlight.jpg" alt="code highlighting"></img><figcaption><center><font color="black">Syntaxe pour créer un bloc de code</center></figcaption></figure>
+<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/c-highlight.jpg" alt="code highlighting"></img><figcaption><center><font color="black">Syntaxe pour créer un bloc de code</center></figcaption></figure>
 
 ## Exploitation de mes données Github grâce à GraphQL 📐
 

@@ -2,7 +2,7 @@
 title: Projet de blog sur l'IT
 description: Blog qui permettra à terme d'échanger sur le futur du web.
 date: 2023-03-24
-cover: blog.jpg
+cover: b.jpg
 tags:
 ---
 
@@ -12,9 +12,9 @@ tags:
 
 <font color="black">Ceci est un projet personnel que j'ai utilisé afin de m'initier à la stack Node.js. L'idée principale est de créer des articles et de les stocker sur une base de données hébergée sur MongoDB Atlas. Le projet est encore en développement.
 
-<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/blog-accueil.jpg" alt="tv-app-search"></img><figcaption><center><font color="black">Accueil du blog</center></figcaption></figure>
+<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/b-accueil.jpg" alt="tv-app-search"></img><figcaption><center><font color="black">Accueil du blog</center></figcaption></figure>
 
-<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/blog-create.jpg" alt="tv-app-search"></img><figcaption><center><font color="black">Formulaire pour la création d'un article</center></figcaption></figure>
+<figure><img style="display: block; margin-left: auto; margin-right: auto" src="/images/projets/b-create.jpg" alt="tv-app-search"></img><figcaption><center><font color="black">Formulaire pour la création d'un article</center></figcaption></figure>
 
 ## Aspects techniques 📐
 

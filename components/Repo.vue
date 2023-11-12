@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({ repos: Object, class: String });
+const props = defineProps({ repos: Object });
 </script>
 
 <template>
