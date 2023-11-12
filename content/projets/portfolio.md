@@ -3,7 +3,6 @@ title: Ce portfolio
 description: Porfolio regroupant quelques-uns de mes projets.
 date: 2023-02-05
 cover: portfo.jpg
-tags:
 ---
 
 # Portfolio regroupant une partie de mes projets 🖈

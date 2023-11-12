@@ -3,7 +3,6 @@ title: My-tv-app
 description: Application de recherche de ses séries préférées à partir d'une API.
 date: 2023-04-24
 cover: tv-app.jpg
-tags:
 ---
 
 # Application de recherche de séries à partir d'une API 🖈
